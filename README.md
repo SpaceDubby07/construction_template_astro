@@ -1,48 +1,88 @@
-# Astro Starter Kit: Basics
+# XYZ Construction Portfolio Website
 
-```sh
-npm create astro@latest -- --template basics
+This repository contains the code for a static portfolio website built for XYZ Construction. The site showcases completed projects, services offered, and company details, providing a modern and responsive user experience.
+
+## Features
+
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop.
+- **Project Filtering**: Filter projects by category (e.g., Residential, Commercial, Renovation).
+- **Pagination**: Projects are displayed with pagination for better navigation.
+- **Contact Form**: A functional contact form to collect user inquiries.
+- **Dynamic Content**: Built with Astro and Preact to enable reusable components and maintainable code.
+
+## Tech Stack
+
+- **Framework**: [Astro](https://astro.build/)
+- **UI Library**: [Preact](https://preactjs.com/)
+- **CSS**: [TailwindCSS](https://tailwindcss.com/)
+- **Hosting**: Compatible with static site hosting platforms like Vercel, Netlify, or GitHub Pages.
+
+## Installation and Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/SpaceDubby07/construction_template_astro.git
+   cd construction_template_astro
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+   The site will be available at `http://localhost:3000`.
+
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+   The output will be generated in the `dist` folder.
+
+5. Preview the production build:
+   ```bash
+   npm run preview
+   ```
+
+## Project Structure
+
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
+├── public/                # Static assets (e.g., images, icons)
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/       # Reusable components (e.g., PortfolioComponent)
+│   ├── layouts/          # Layouts for pages
+│   ├── pages/            # Page files (e.g., index.astro, about.astro)
+│   └── styles/           # Custom styles or Tailwind extensions
+├── package.json          # Project dependencies and scripts
+├── tailwind.config.js    # TailwindCSS configuration
+└── astro.config.mjs      # Astro project configuration
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Pages
 
-## 🧞 Commands
+### Home Page
+Highlights the company’s mission, key services, and a call-to-action to explore the portfolio or contact the team.
 
-All commands are run from the root of the project, from a terminal:
+### About Us
+Describes the company’s history, values, and team members, with responsive team member photos.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### Services
+Lists detailed descriptions of the construction services offered, formatted in a clean grid layout.
 
-## 👀 Want to learn more?
+### Portfolio
+Showcases completed projects with categories and pagination for easy navigation.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Contact Us
+Includes a contact form, location map, phone number, and business hours.
+
+## Contributing
+
+Contributions are welcome! If you'd like to add features, fix bugs, or improve the codebase, feel free to fork the repo and open a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
