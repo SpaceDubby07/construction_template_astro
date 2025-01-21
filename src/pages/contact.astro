@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+if (Astro.request.method === 'POST') {
+  try {
+    const data = await Astro.request.formData();
+    console.log(data);
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+---
+
+<style>
+  label {
+    color: white;
+  }
+</style>
+
+<BaseLayout
+  pageTitle="Contact Us | XYZ Construction"
+  description="Get in touch with XYZ Construction for inquiries, quotes, or project details."
+>
+  <!-- Contact Section -->
+  <div
+    class="pt-20 pb-2 px-6 bg-gradient-to-r from-slate-900 to bg-slate-700 text-center text-white"
+  >
+    <h1 class="text-4xl font-bold mb-8">Contact Us</h1>
+    <p class="text-gray-400 text-lg mb-6">
+      We'd love to hear from you! Reach out to us for inquiries,
+      quotes, or project details. We will follow up as soon as
+      possible to begin creating your vision.
+    </p>
+  </div>
+  <!-- form -->
+  <section
+    class="bg-gradient-to-r from-slate-900 to bg-slate-700 px-6 py-10"
+  >
+    <div class="container mx-auto">
+      <form class="max-w-md mx-auto" method="POST" id="contact-form">
+        <div class="mb-4">
+          <label
+            for="name"
+            class="block text-gray-700 font-semibold mb-2">Name</label
+          >
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="w-full p-2 border border-gray-300 rounded"
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            for="email"
+            class="block text-gray-700 font-semibold mb-2"
+            >Email</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="w-full p-2 border border-gray-300 rounded"
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            for="message"
+            class="block text-gray-700 font-semibold mb-2"
+            >Inquiry</label
+          >
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            class="w-full p-2 border border-gray-300 rounded"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="bg-slate-950 text-white py-2 px-4 rounded hover:bg-slate-600 transition-colors"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <section class="py-10 bg-gray-50 px-6">
+    <div class="container mx-auto text-center">
+      <div
+        class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-between"
+      >
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">Our Location</h2>
+          <p class="text-gray-600">
+            456 Builder's Lane, Construction City, CA
+          </p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">Phone</h2>
+          <p class="text-gray-600">+1 (123) 456-7890</p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-semibold mb-8">Office Hours</h2>
+          <ul class="list-none space-y-2 text-gray-600">
+            <li>Monday - Friday: 8:00 AM - 5:00 PM</li>
+            <li>Saturday: 9:00 AM - 2:00 PM</li>
+            <li>Sunday: Closed</li>
+          </ul>
+        </div>
+      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345020755!2d-122.42067968546951!3d37.77492977975909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085814dce3f70c1%3A0x8b7526f10e2e2e1d!2sCoffee%20Shop!5e0!3m2!1sen!2sus!4v1616161616161!5m2!1sen!2sus"
+        width="100%"
+        height="400"
+        allowfullscreen=""
+        title="Coffee Shop Map"
+        class="border rounded-lg mt-4"></iframe>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document
+    .getElementById('contact-form')
+    .addEventListener('submit', async (event) => {
+      event.preventDefault(); // Prevent form from refreshing the page
+
+      const form = event.target as HTMLFormElement;
+      const formData = new FormData(form);
+
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const message = formData.get('message');
+
+      console.log('Form Data:', { name, email, message });
+
+      // Optionally, send the data to a server
+      try {
+        const response = await fetch('/contact', {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (response.ok) {
+          alert('Thank you! Your message has been sent.');
+          form.reset();
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
+    });
+</script>

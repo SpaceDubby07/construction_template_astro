@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  pageTitle="XYZ Construction | Home"
+  description="Reliable Construction Services for Residential & Commercial Projects"
+>
+  <!-- Hero Section -->
+  <section
+    class="bg-gradient-to-r from-slate-900 to bg-slate-700 text-white py-20 text-center"
+  >
+    <h1 class="text-4xl font-bold mb-4">
+      Building Your Future with Trust and Excellence
+    </h1>
+    <p class="text-xl mb-6">
+      Residential, Commercial, and Renovation Projects
+    </p>
+    <a
+      href="/contact"
+      class="bg-slate-950 text-white py-3 px-6 rounded-full text-lg hover:bg-slate-600 hover:scale-95"
+      >Get a Free Estimate</a
+    >
+  </section>
+
+  <!-- Services Overview -->
+  <section class="py-12 bg-gray-50 text-center">
+    <h2 class="text-3xl font-bold mb-6">Our Services</h2>
+    <div
+      class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
+      <div class="bg-white p-6">
+        <h3 class="text-2xl font-semibold mb-4">Residential</h3>
+        <p class="text-gray-600">
+          We specialize in custom homes, additions, and renovations.
+        </p>
+      </div>
+      <div class="bg-white p-6">
+        <h3 class="text-2xl font-semibold mb-4">Commercial</h3>
+        <p class="text-gray-600">
+          From office buildings to retail spaces, we deliver
+          top-quality construction.
+        </p>
+      </div>
+      <div class="bg-white p-6">
+        <h3 class="text-2xl font-semibold mb-4">Renovations</h3>
+        <p class="text-gray-600">
+          We turn old spaces into new possibilities with our expert
+          renovation services.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="py-12">
+    <h2 class="text-3xl font-bold text-center mb-6">
+      Featured Projects
+    </h2>
+    <div
+      class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
+      <div class="bg-white shadow-lg rounded-sm overflow-hidden">
+        <img
+          src="/images/project-1.jpg"
+          alt="Residential Project"
+          class="w-full h-48 object-fill"
+        />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Luxury Home</h3>
+          <p class="text-gray-600">
+            A beautiful custom home built to our client’s exact
+            specifications.
+          </p>
+        </div>
+      </div>
+      <div class="bg-white shadow-lg rounded-sm overflow-hidden">
+        <img
+          src="/images/project-2.jpg"
+          alt="Commercial Project"
+          class="w-full h-48 object-fill"
+        />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Office Building</h3>
+          <p class="text-gray-600">
+            A modern office space designed for efficiency and
+            collaboration.
+          </p>
+        </div>
+      </div>
+      <div class="bg-white shadow-lg rounded-sm overflow-hidden">
+        <img
+          src="/images/project-3.jpg"
+          alt="Renovation Project"
+          class="w-full h-48 object-fill"
+        />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Kitchen Renovation</h3>
+          <p class="text-gray-600">
+            A stunning kitchen renovation, blending style with
+            functionality.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-12 bg-gray-50">
+    <h2 class="text-3xl font-bold text-center mb-6">
+      What Our Clients Say
+    </h2>
+    <div
+      class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center"
+    >
+      <div class="bg-white p-6 rounded-sm shadow">
+        <p class="text-gray-600">
+          “XYZ Construction transformed our outdated kitchen into a
+          modern space we love! Highly recommended!”
+        </p>
+        <h4 class="mt-4 font-semibold">Jane Doe</h4>
+      </div>
+      <div class="bg-white p-6 rounded-sm shadow">
+        <p class="text-gray-600">
+          “Great service, on time, and on budget. They built our
+          office building to perfection.”
+        </p>
+        <h4 class="mt-4 font-semibold">John Smith</h4>
+      </div>
+      <div class="bg-white p-6 rounded-sm shadow">
+        <p class="text-gray-600">
+          “The team was fantastic to work with during our home
+          renovation. We couldn’t be happier.”
+        </p>
+        <h4 class="mt-4 font-semibold">Michael Johnson</h4>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

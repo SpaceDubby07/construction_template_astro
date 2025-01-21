@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PortfolioComponent from '../components/PortfolioComponent';
+
+const projects = [
+  {
+    title: 'Luxury Modern Home',
+    description:
+      'A stunning residential project featuring sleek modern design and sustainable materials.',
+    image: '/images/luxury-home.jpg',
+    category: 'Residential',
+  },
+  {
+    title: 'Downtown Office Complex',
+    description:
+      'A state-of-the-art commercial office building located in the heart of the city.',
+    image: '/images/office-complex.jpg',
+    category: 'Commercial',
+  },
+  {
+    title: 'Renovated Historic Building',
+    description:
+      'A beautiful restoration of a historic landmark, preserving its original charm.',
+    image: '/images/historic-building.jpg',
+    category: 'Renovation',
+  },
+  {
+    title: 'Suburban Shopping Plaza',
+    description:
+      'A modern shopping center designed for convenience and aesthetics.',
+    image: '/images/shopping-plaza.jpg',
+    category: 'Commercial',
+  },
+  {
+    title: 'Cozy Family Cottage',
+    description:
+      'A charming cottage with a cozy atmosphere and rustic design.',
+    image: '/images/family-cottage.jpg',
+    category: 'Residential',
+  },
+  {
+    title: 'Industrial Warehouse',
+    description:
+      'A durable and efficient warehouse designed for industrial use.',
+    image: '/images/warehouse.jpg',
+    category: 'Commercial',
+  },
+  {
+    title: 'Lakefront Villa',
+    description:
+      'A luxurious villa with a stunning view of the lake.',
+    image: '/images/lakefront-villa.jpg',
+    category: 'Residential',
+  },
+  {
+    title: 'Modern Renovation',
+    description: 'A contemporary upgrade to an existing home.',
+    image: '/images/modern-renovation.jpg',
+    category: 'Renovation',
+  },
+  {
+    title: 'Luxury Modern Home',
+    description:
+      'A stunning residential project featuring sleek modern design and sustainable materials.',
+    image: '/images/luxury-home.jpg',
+    category: 'Residential',
+  },
+  {
+    title: 'Downtown Office Complex',
+    description:
+      'A state-of-the-art commercial office building located in the heart of the city.',
+    image: '/images/office-complex.jpg',
+    category: 'Commercial',
+  },
+  {
+    title: 'Renovated Historic Building',
+    description:
+      'A beautiful restoration of a historic landmark, preserving its original charm.',
+    image: '/images/historic-building.jpg',
+    category: 'Renovation',
+  },
+  {
+    title: 'Suburban Shopping Plaza',
+    description:
+      'A modern shopping center designed for convenience and aesthetics.',
+    image: '/images/shopping-plaza.jpg',
+    category: 'Commercial',
+  },
+  {
+    title: 'Cozy Family Cottage',
+    description:
+      'A charming cottage with a cozy atmosphere and rustic design.',
+    image: '/images/family-cottage.jpg',
+    category: 'Residential',
+  },
+  {
+    title: 'Industrial Warehouse',
+    description:
+      'A durable and efficient warehouse designed for industrial use.',
+    image: '/images/warehouse.jpg',
+    category: 'Commercial',
+  },
+  {
+    title: 'Lakefront Villa',
+    description:
+      'A luxurious villa with a stunning view of the lake.',
+    image: '/images/lakefront-villa.jpg',
+    category: 'Residential',
+  },
+  {
+    title: 'Modern Renovation',
+    description: 'A contemporary upgrade to an existing home.',
+    image: '/images/modern-renovation.jpg',
+    category: 'Renovation',
+  },
+];
+
+const categories = ['All', 'Residential', 'Commercial', 'Renovation'];
+---
+
+<BaseLayout
+  pageTitle="Portfolio | XYZ Construction"
+  description="View our portfolio of completed projects..."
+>
+  <div
+    class="pt-20 py-10 pb-8 px-6 bg-gradient-to-r from-slate-900 to bg-slate-700 text-center text-white"
+  >
+    <h1 class="text-4xl font-bold mb-4">Our Portfolio</h1>
+    <p class="text-gray-400 text-lg">
+      Take a look at some of our completed projects...
+    </p>
+  </div>
+
+  <PortfolioComponent client:load {projects} {categories} />
+</BaseLayout>

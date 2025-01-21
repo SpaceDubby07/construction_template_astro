@@ -1,0 +1,45 @@
+<nav
+  class="bg-gradient-to-r from-slate-900 to bg-slate-700 text-white p-4 lg:p-6 lg:flex lg:items-center lg:justify-between"
+>
+  <div class="flex items-center justify-between">
+    <a href="/" class="text-2xl font-bold">XYZ Construction</a>
+    <button
+      aria-label="Toggle navigation"
+      class="lg:hidden"
+      type="button"
+      id="menu-toggle"
+    >
+      <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+        <path
+          d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 110-2z"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <ul
+    id="nav"
+    class="hidden lg:flex lg:flex-row lg:space-x-4 lg:items-center"
+  >
+    <li><a href="/" class="hover:text-gray-300">Home</a></li>
+    <li>
+      <a href="/portfolio" class="hover:text-gray-300">Portfolio</a>
+    </li>
+    <li>
+      <a href="/services" class="hover:text-gray-300">Services</a>
+    </li>
+    <li><a href="/about" class="hover:text-gray-300">About</a></li>
+    <li>
+      <a href="/contact" class="hover:text-gray-300">Contact</a>
+    </li>
+  </ul>
+</nav>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav');
+
+  if (menuToggle && nav) {
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('hidden');
+    });
+  }
+</script>
